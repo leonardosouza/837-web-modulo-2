@@ -1,9 +1,8 @@
 console.log("=== ARRAY ===");
 
 // Antipadrão
-const carro1 = "Gol";
-carro1.repeat
 /*
+const carro1 = "Gol";
 const carro2 = "Corsa";
 const carro3 = "Fox";
 */
@@ -52,12 +51,49 @@ document.write("<hr>");
 
 // Implementação 2
 // Função Anônima
-carros.forEach(function(carro, i) {
+carros.forEach( function(carro, i) {
   console.log("funfa?", carro, i);
   document.write("2 => ", carro, "<br>");
-});
-
-
+} );
 
 console.log(carros);
 console.log(carros.length);
+
+let numeros = [2, 3, 4, 32, 21, 25, 17, 1];
+console.log(numeros);
+
+document.write("<hr>");
+
+console.log(
+  numeros.forEach(function(value, index) {
+    // document.write(arguments[0], "<br>");
+    console.log(value, index);
+    document.write(value, "<br>");
+  })
+);
+
+// function() {   }(32, 0, numeros);
+// function() {   }(21, 1, numeros);
+// function() {   }(25, 2, numeros);
+
+
+// filter / map
+console.log(
+  numeros = numeros.filter(function(numero) {
+    console.log("filter?", numero);
+    return numero < 25;
+  })
+);
+
+console.log(numeros);
+
+console.log(
+  numeros = numeros.map(function(numero) {
+    console.log("map?", numero);
+    return numero * 5;
+  })
+);
+
+console.log(numeros);
+
+

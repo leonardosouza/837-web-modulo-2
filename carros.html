@@ -9,18 +9,32 @@
 <body>
   <h1>Loja de Carros</h1>
 
-  <label for="">Insira o nome do veículo:</label>
+  <label for="">Modelo:</label>
   <input type="text" id="modelo">
-  <button>Adicionar</button>
 
-  <hr>
+  <br><br>
 
-  <p>Quantidade de Carros: <span id="qtde">0</span></p>
+  <label for="">Ano:</label>
+  <input type="number" id="ano">
 
-  <hr>
-  <p>- Carro1</p>
-  <p>- Carro2</p>
-  <p>- Carro3</p>
+  <br><br>
+
+  <label for="">Cor:</label>
+  <input type="color" id="cor">
+
+  <br><br>
+
+  <label for="">Situação:</label>
+
+  <select id="situacao">
+    <option value="novo">Novo</option>
+    <option value="usado">Usado</option>
+    <option value="zero">Zero KM</option>
+  </select>
+
+  <br><br>
+
+  <button onclick="adicionar()">Adicionar</button>
   
   <script src="carros.js"></script>
 </body>

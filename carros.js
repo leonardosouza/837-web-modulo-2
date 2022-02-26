@@ -1,17 +1,35 @@
 console.log("=== CARROS ===");
 
-// DICA 1: Apenas no Input
-document.getElementById("modelo").value = "Preencher";
+// PREMISSAS
+// 1 - ARMAZENAR DADOS EM UM OBJETO
+// 2 - COLOCAR O OBJETO DENTRO DE UM ARRAY
+// 3 - EXIBIR TUDO QUE FOR CADASTRADO DENTRO DO CONSOLE.TABLE
+const carros = [];
 
-// DICA 2: Tags em Geral
-document.getElementById("qtde").textContent = "Preencher"
+function adicionar() {
+  // entrada
+  const modelo = document.getElementById("modelo");
+  const ano = document.getElementById("ano");
+  const cor = document.getElementById("cor");
+  const situacao = document.getElementById("situacao");
+  // console.log(modelo, ano, cor, situacao);
+  console.log(modelo.value, ano.value, cor.value, situacao.value);
+  // console.log(situacao);
+  // console.log(situacao.options); // array
+  // console.log(situacao.options.selectedIndex); // indice
+  // console.log(situacao.options[situacao.options.selectedIndex].value);
 
-// Critérios de Aceite
-/*
-PREMISSA: USE ARRAY!!!!
+  // processamento
+  const carro = {
+    modelo: modelo.value,
+    ano: ano.value,
+    cor: cor.value,
+    situacao: situacao.value
+  };
 
-1 - Ao cadastrar um carro, incrementar a quantidade
-2 - Limpar o campo para o proximo preenchimento
-3 - Ao alcancar 10 carros, exibi-los na tela
+  console.log(carro);
+  carros.push(carro);
 
-*/
+  // saida
+  console.table(carros);
+}
