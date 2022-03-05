@@ -28,8 +28,49 @@ function adicionar() {
   };
 
   console.log(carro);
-  carros.push(carro);
+  carros.push(carro); // adiciona no array
 
   // saida
   console.table(carros);
+
+  // exibir a tabela
+  const lista = document.getElementById("lista");
+  lista.innerHTML = 
+  carros
+    // .filter(function(carro) {
+    //   return carro.ano === '2015'
+    // })
+    .map(function(carro) {
+       return `<tr>
+        <td>${carro.modelo}</td>
+        <td>${carro.ano}</td>
+        <td>${carro.cor}</td>
+        <td>${carro.situacao}</td>
+      </tr>`;
+    })
+    .join("");
+
+  // limpar os campos
+  modelo.value = '';
+  ano.value = '';
+  cor.value = '';
+  // situacao.value = '';
+
+  // dar foco no primeiro campo
+  modelo.focus();
 }
+
+function ordenar() {
+  console.log("click");
+  // lista.innerHTML = carros.sort();
+}
+
+
+// AVALIACAO
+/*
+1 - FAZER UMA COPIA DO EXERCICIO DA LOJA DE CARROS
+2 - ADICIONAR UMA COLUNA COM UM ID (AO LADO DO MODELO)
+3 - ADICIONAR NO FORMULARIO UM CAMPO PARA RECEBER O PRECO
+4 - EXIBIR UMA COLUNA COM O O PRECO
+5 - EXIBIR O TOTAL DE TODOS OS VEICULOS CADASTRADOS (REQUISITO -> USAR REDUCE)
+*/

@@ -77,7 +77,7 @@ console.log(
 // function() {   }(25, 2, numeros);
 
 
-// filter / map
+// filter
 console.log(
   numeros = numeros.filter(function(numero) {
     console.log("filter?", numero);
@@ -87,6 +87,7 @@ console.log(
 
 console.log(numeros);
 
+// map
 console.log(
   numeros = numeros.map(function(numero) {
     console.log("map?", numero);
@@ -96,4 +97,15 @@ console.log(
 
 console.log(numeros);
 
+// reduce
+console.log(
+  // numeros.reduce(callback, valorInicial)
+  numeros.reduce(function(previous, current, index, array) {
+    console.log("prev:", previous, "cur:", current)
+    // console.log("ind:", index, "arr:", array)
+    return previous + current;
+    // previous.push(current * 2)
+    // return previous;
+  }, 0)
+)
 
